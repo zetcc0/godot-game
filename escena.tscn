@@ -1,22 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3vjenmp0aqpd"]
 
 [ext_resource type="Texture2D" uid="uid://b52ceev1ne53q" path="res://icon.svg" id="1_865ah"]
-[ext_resource type="Script" uid="uid://ce1p164ri8ewl" path="res://player.gd" id="1_ugwex"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugwex"]
+[ext_resource type="PackedScene" uid="uid://beut8rb6vcrsg" path="res://player.tscn" id="1_ugwex"]
+[ext_resource type="PackedScene" uid="uid://b3xjakcqnupe3" path="res://bullet.tscn" id="3_sks45"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(560, 295)
-script = ExtResource("1_ugwex")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("1_865ah")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-scale = Vector2(6.4, 6.4)
-shape = SubResource("RectangleShape2D_ugwex")
+[node name="Player" parent="." instance=ExtResource("1_ugwex")]
+position = Vector2(495, 289)
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(192, 128)
@@ -29,3 +20,6 @@ texture = ExtResource("1_865ah")
 [node name="Icon3" type="Sprite2D" parent="."]
 position = Vector2(926, 90)
 texture = ExtResource("1_865ah")
+
+[node name="Area2D" parent="." instance=ExtResource("3_sks45")]
+position = Vector2(693, 372)

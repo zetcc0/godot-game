@@ -1,22 +1,22 @@
 extends CharacterBody2D
 
-@export var speed = 4000
-@export var rotation_speed = 1.5
+@export var speed : int = 300
+@export var rotation_speed : float = 0.02
+@export var bullet_scene : PackedScene = preload("res://bullet.tscn")
+
+func get_input() -> void:
+	rotation += Input.get_axis("left", "right") * rotation_speed
+	velocity = transform.y * Input.get_axis("forward", "backward") * speed 
+
+func shoot() -> void:
+	var b = bullet_scene.instantiate()
+	get_tree().root.add_child(b)
+	b.transform = $".".global_transform
 
 func _physics_process(delta: float) -> void:
-	velocity = Vector2()
-
-	if Input.is_action_pressed("right"):
-		rotation += 0.02
-	if Input.is_action_pressed("left"):
-		rotation -= 0.02
-	if Input.is_action_pressed("backward"):
-		velocity.y += 1
-	if Input.is_action_pressed("forward"):
-		velocity.y -= 1
-	velocity = velocity * speed * delta
-	velocity = velocity.rotated(rotation)
+	get_input()
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
-	pass
+	if event.is_action_pressed("shoot"):
+		shoot()
