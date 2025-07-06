@@ -1,25 +1,66 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3vjenmp0aqpd"]
+[gd_scene load_steps=5 format=3 uid="uid://d3vjenmp0aqpd"]
 
-[ext_resource type="Texture2D" uid="uid://b52ceev1ne53q" path="res://icon.svg" id="1_865ah"]
 [ext_resource type="PackedScene" uid="uid://beut8rb6vcrsg" path="res://player.tscn" id="1_ugwex"]
-[ext_resource type="PackedScene" uid="uid://b3xjakcqnupe3" path="res://bullet.tscn" id="3_sks45"]
+[ext_resource type="Script" uid="uid://b6oic0d4b4io3" path="res://game_manager.gd" id="2_ugwex"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="FontFile" id="FontFile_865ah"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/8/0/ascent = 0.0
+cache/0/8/0/descent = 0.0
+cache/0/8/0/underline_position = 0.0
+cache/0/8/0/underline_thickness = 0.0
+cache/0/8/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_ugwex"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ugwex")]
-position = Vector2(495, 289)
+position = Vector2(499, 256)
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(192, 128)
-texture = ExtResource("1_865ah")
+[node name="MultiplayerHUD" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 108.0
+offset_top = 71.0
+offset_right = 173.0
+offset_bottom = 138.0
 
-[node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(392, 527)
-texture = ExtResource("1_865ah")
+[node name="Panel" type="Panel" parent="MultiplayerHUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Icon3" type="Sprite2D" parent="."]
-position = Vector2(926, 90)
-texture = ExtResource("1_865ah")
+[node name="VBoxContainer" type="VBoxContainer" parent="MultiplayerHUD/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Area2D" parent="." instance=ExtResource("3_sks45")]
-position = Vector2(693, 372)
+[node name="HostButton" type="Button" parent="MultiplayerHUD/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_865ah")
+text = "Host"
+
+[node name="ClientButton" type="Button" parent="MultiplayerHUD/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_ugwex")
+text = "Player 2"
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("2_ugwex")
+
+[connection signal="pressed" from="MultiplayerHUD/Panel/VBoxContainer/HostButton" to="GameManager" method="become_host"]
+[connection signal="pressed" from="MultiplayerHUD/Panel/VBoxContainer/ClientButton" to="GameManager" method="join_as_player_2"]

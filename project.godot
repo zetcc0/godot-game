@@ -15,6 +15,14 @@ run/main_scene="uid://d3vjenmp0aqpd"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MultiplayerManager="*res://multiplayer/multiplayer_manager.gd"
+
+[display]
+
+window/size/always_on_top=true
+
 [input]
 
 backward={
