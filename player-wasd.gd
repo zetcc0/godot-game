@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed : int = 300
-@export var rotation_speed : float = 0.10
+@export var rotation_speed : float = 0.02
 @export var bullet_scene : PackedScene = preload("res://bullet.tscn")
 
 func get_input() -> void:
