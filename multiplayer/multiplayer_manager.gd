@@ -6,11 +6,19 @@ const SERVER_IP = "127.0.0.1"
 var multiplayer_scene = preload("res://multiplayer/multiplayer_player.tscn")
 
 var _players_spawn_node
+var _bullets_spawn_node
 
+func _on_player_shoot(player_transform):
+	var bullet_scene : PackedScene = preload("res://bullet.tscn")
+	var bullet = bullet_scene.instantiate()
+	bullet.transform = player_transform
+	_bullets_spawn_node.add_child(bullet, true)
+	
 func become_host():
 	print("Starting host!")
 	
 	_players_spawn_node = get_tree().get_current_scene().get_node("Players")
+	_bullets_spawn_node = get_tree().get_current_scene().get_node("Bullets")
 	
 	# Creating server peer
 	var server_peer = ENetMultiplayerPeer.new()
@@ -24,6 +32,8 @@ func become_host():
 	# Remove single player mode, adding multiplayer player
 	_remove_single_player()
 	_add_player_to_game(1)
+
+
 
 func join_as_player_2():
 	print("Player 2 joining!")
@@ -42,6 +52,8 @@ func _add_player_to_game(id: int):
 	var player_to_add = multiplayer_scene.instantiate()
 	player_to_add.player_id = id
 	player_to_add.name = str(id)
+	
+	player_to_add.connect("signal_shoot", Callable(self, "_on_player_shoot"))
 	
 	_players_spawn_node.add_child(player_to_add, true)
 
