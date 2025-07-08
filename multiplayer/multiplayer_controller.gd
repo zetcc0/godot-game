@@ -1,12 +1,19 @@
 extends CharacterBody2D
 
+
 @export var speed : int = 300
 @export var rotation_speed : float = 0.02
+
 @export var bullet_scene : PackedScene = preload("res://bullet.tscn")
 
+@export var player_id : int = 1:
+	set (id):
+		player_id = id 
+		%InputSynchronizer.set_multiplayer_authority(id)
+
 func get_input() -> void:
-	rotation += Input.get_axis("left", "right") * rotation_speed
-	velocity = transform.y * Input.get_axis("forward", "backward") * speed 
+	rotation += %InputSynchronizer.input_rotation * rotation_speed
+	velocity = transform.y * %InputSynchronizer.input_velocity * speed 
 
 func shoot() -> void:
 	var b = bullet_scene.instantiate()
@@ -14,9 +21,9 @@ func shoot() -> void:
 	b.transform = $".".global_transform
 
 func _physics_process(_delta: float) -> void:
+	if !multiplayer.is_server():
+		return
 	get_input()
 	move_and_slide()
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("shoot"):
+	if %InputSynchronizer.input_shoot:
 		shoot()

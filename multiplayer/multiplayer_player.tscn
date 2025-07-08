@@ -1,12 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnwfexwqjcnsq"]
+[gd_scene load_steps=7 format=3 uid="uid://bnwfexwqjcnsq"]
 
-[ext_resource type="Script" uid="uid://bj668e4ikp0ty" path="res://multiplayer/multiplayer_player.gd" id="1_6b4kk"]
+[ext_resource type="Script" uid="uid://bj668e4ikp0ty" path="res://multiplayer/multiplayer_controller.gd" id="1_6b4kk"]
+[ext_resource type="Script" uid="uid://dcx03li7enpjx" path="res://multiplayer/multiplayer_input.gd" id="2_77vqc"]
 [ext_resource type="Texture2D" uid="uid://b52ceev1ne53q" path="res://icon.svg" id="2_mhy7n"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_mhy7n"]
+properties/0/path = NodePath(".:player_id")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:position")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:rotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_iohsw"]
+properties/0/path = NodePath("InputSynchronizer:input_velocity")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("InputSynchronizer:input_rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("InputSynchronizer:input_shoot")
+properties/2/spawn = true
+properties/2/replication_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77vqc"]
 
-[node name="multiplayer_player" type="CharacterBody2D"]
+[node name="MultiplayerPlayer" type="CharacterBody2D"]
+collision_mask = 2
 script = ExtResource("1_6b4kk")
+
+[node name="PlayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_mhy7n")
+
+[node name="InputSynchronizer" type="MultiplayerSynchronizer" parent="."]
+unique_name_in_owner = true
+replication_config = SubResource("SceneReplicationConfig_iohsw")
+script = ExtResource("2_77vqc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(6.4, 6.4)

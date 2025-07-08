@@ -21,6 +21,8 @@ MultiplayerManager="*res://multiplayer/multiplayer_manager.gd"
 
 [display]
 
+window/size/viewport_width=576
+window/size/viewport_height=324
 window/size/always_on_top=true
 
 [input]
