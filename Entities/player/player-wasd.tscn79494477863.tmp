@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2ywqrrx4ilxa"]
+[gd_scene load_steps=5 format=3 uid="uid://ca3gf2axp1fvr"]
 
-[ext_resource type="Script" path="res://player-wasd.gd" id="1_qhxr1"]
-[ext_resource type="Texture2D" uid="uid://b52ceev1ne53q" path="res://Entities/icon.svg" id="2_1vpwc"]
-[ext_resource type="PackedScene" uid="uid://tvrcwe25fbch" path="res://cannon.tscn" id="3_1vpwc"]
+[ext_resource type="Script" uid="uid://nkgcpi2niaq0" path="res://player-wasd.gd" id="1_qhxr1"]
+[ext_resource type="Texture2D" uid="uid://b52ceev1ne53q" path="res://sprites/icon.svg" id="2_1vpwc"]
+[ext_resource type="PackedScene" uid="uid://b0e7aouy48s6o" path="res://cannon.tscn" id="3_1vpwc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ugwex"]
 
@@ -18,4 +18,4 @@ shape = SubResource("RectangleShape2D_ugwex")
 texture = ExtResource("2_1vpwc")
 
 [node name="cannon" parent="." instance=ExtResource("3_1vpwc")]
-scale = Vector2(1.724, 2)
+position = Vector2(-481, -284)

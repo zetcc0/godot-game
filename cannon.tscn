@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://tvrcwe25fbch"]
+
+[ext_resource type="Script" path="res://cannon.gd" id="1_23j6s"]
+[ext_resource type="Texture2D" uid="uid://rp0r4yy35t6g" path="res://Entities/cannon/cañon_sprite.png" id="1_i10un"]
+
+[node name="cannon" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_23j6s")
+
+[node name="cannon-sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(4.375, 4)
+texture = ExtResource("1_i10un")
+
+[node name="muzzle" type="Marker2D" parent="."]
+position = Vector2(0, -50)
