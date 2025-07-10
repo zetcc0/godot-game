@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvqrgr4x3c7h4"]
+
+[ext_resource type="PackedScene" uid="uid://c1rxhf5s7lhaa" path="res://entities/tank/tank.tscn" id="1_abrql"]
+[ext_resource type="Script" uid="uid://kic5fyg4rx15" path="res://entities/player/player.gd" id="1_sglur"]
+[ext_resource type="PackedScene" uid="uid://b0e7aouy48s6o" path="res://entities/cannon/cannon.tscn" id="2_sglur"]
+
+[node name="Player" type="Node2D"]
+position = Vector2(355, 244)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_sglur")
+
+[node name="Tank" parent="." instance=ExtResource("1_abrql")]
+
+[node name="Cannon" parent="." instance=ExtResource("2_sglur")]
+scale = Vector2(2, 2)

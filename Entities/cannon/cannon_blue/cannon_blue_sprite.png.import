@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdu4tpqadjki3"
-path="res://.godot/imported/icon.svg-d92bd8c56cf7c2100bc01e5ce8843bc6.ctex"
+uid="uid://c8ebax6gm4rlo"
+path="res://.godot/imported/cannon_blue_sprite.png-b489fd1abe9444ab984cdbf789caa235.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-d92bd8c56cf7c2100bc01e5ce8843bc6.ctex"]
+source_file="res://entities/cannon/cannon_blue/cannon_blue_sprite.png"
+dest_files=["res://.godot/imported/cannon_blue_sprite.png-b489fd1abe9444ab984cdbf789caa235.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
