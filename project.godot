@@ -11,9 +11,8 @@ config_version=5
 [application]
 
 config/name="new project"
-run/main_scene="uid://d32yubcmli4p6"
+run/main_scene="uid://d3vjenmp0aqpd"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://sprites/icon.svg"
 
 [autoload]
 
@@ -23,8 +22,6 @@ MultiplayerManager="*res://managers/multiplayer_manager.gd"
 
 [display]
 
-window/size/viewport_width=576
-window/size/viewport_height=324
 window/size/always_on_top=true
 
 [input]

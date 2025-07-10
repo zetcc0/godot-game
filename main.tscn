@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3vjenmp0aqpd"]
+[gd_scene load_steps=4 format=3 uid="uid://d3vjenmp0aqpd"]
 
 [ext_resource type="Script" uid="uid://b0v5n7kdknifv" path="res://main.gd" id="1_5vw27"]
-[ext_resource type="PackedScene" uid="uid://beut8rb6vcrsg" path="res://entities/player/player.tscn" id="1_272bh"]
-[ext_resource type="PackedScene" uid="uid://civn8spw6iqxi" path="res://entities/bullet/bullet.tscn" id="2_5vw27"]
+[ext_resource type="PackedScene" uid="uid://cvqrgr4x3c7h4" path="res://entities/player/player.tscn" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://5k50wguc1bfx" path="res://multiplayer/multiplayer_hud/multiplayer_hud.tscn" id="7_ycdy4"]
 
 [node name="main" type="Node2D"]
@@ -16,7 +15,6 @@ spawn_path = NodePath("../Players")
 
 [node name="Player" parent="." instance=ExtResource("1_272bh")]
 position = Vector2(499, 256)
-bullet_scene = ExtResource("2_5vw27")
 
 [node name="MultiplayerHUD" parent="." instance=ExtResource("7_ycdy4")]
 unique_name_in_owner = true
