@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var rotation_speed : float = 0.07
-@export var bullet_scene : PackedScene = preload("res://Entities/bullet/bullet.tscn")
+@export var bullet_scene : PackedScene = preload("res://entities/bullet/bullet.tscn")
 @onready var muzzle = $muzzle  # Un Marker2D al frente del cañón
 
 func _process(_delta: float) -> void:

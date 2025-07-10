@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://civn8spw6iqxi"]
 
 [ext_resource type="Script" uid="uid://cefswgaymqlae" path="res://multiplayer/multiplayer_bullet/multiplayer_bullet.gd" id="1_xbwfe"]
-[ext_resource type="Texture2D" uid="uid://b52ceev1ne53q" path="res://icon.svg" id="2_kkstj"]
+[ext_resource type="Texture2D" uid="uid://bdu4tpqadjki3" path="res://icon.svg" id="2_kkstj"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_v8qja"]
 properties/0/path = NodePath(".:position")

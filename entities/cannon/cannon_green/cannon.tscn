@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b0e7aouy48s6o"]
 
-[ext_resource type="Script" uid="uid://buh12sexpmcg" path="res://Entities/cannon/cannon_green/cannon.gd" id="1_23j6s"]
-[ext_resource type="Texture2D" uid="uid://rp0r4yy35t6g" path="res://Entities/cannon/cannon_green/cannon_sprite.png" id="1_i10un"]
+[ext_resource type="Script" uid="uid://buh12sexpmcg" path="res://entities/cannon/cannon_green/cannon.gd" id="1_23j6s"]
+[ext_resource type="Texture2D" uid="uid://rp0r4yy35t6g" path="res://entities/cannon/cannon_green/cannon_sprite.png" id="1_i10un"]
 
 [node name="Cannon" type="Node2D"]
 texture_filter = 1

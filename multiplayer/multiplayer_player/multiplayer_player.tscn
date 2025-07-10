@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bj668e4ikp0ty" path="res://multiplayer/multiplayer_player/multiplayer_controller.gd" id="1_q32ej"]
 [ext_resource type="Script" uid="uid://dcx03li7enpjx" path="res://multiplayer/multiplayer_player/multiplayer_input.gd" id="2_phfal"]
-[ext_resource type="Texture2D" uid="uid://b52ceev1ne53q" path="res://icon.svg" id="3_j08cd"]
+[ext_resource type="Texture2D" uid="uid://bdu4tpqadjki3" path="res://icon.svg" id="3_j08cd"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_mhy7n"]
 properties/0/path = NodePath(".:player_id")

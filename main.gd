@@ -4,7 +4,7 @@ func _ready():
 	# Assigning the nodes
 	Globals.multiplayer_hud = $MultiplayerHUD
 	Globals._bullets_spawn_node = %Bullets
-	Globals._players_spawn_node = %Players
+	Globals._players_spawn_node = %Players 
 	
 	# Assigning spawnable scenes to synchronizing spawners
 	$BulletSpawner.add_spawnable_scene(Globals.bullet_scene.resource_path)

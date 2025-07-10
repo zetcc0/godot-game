@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var rotation_speed : float = 0.07
-@export var bullet_scene : PackedScene = preload("res://Entities/bullet/bullet.tscn")
+@export var bullet_scene : PackedScene = preload("res://entities/bullet/bullet.tscn")
 @export var shoot_cooldown : float = 0.5  # medio segundo entre disparos
 
 @onready var muzzle = $muzzle
