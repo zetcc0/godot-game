@@ -2,15 +2,14 @@ extends CharacterBody2D
 
 @export var speed : int = 300
 @export var rotation_speed : float = 0.02
-
-var is_shooting : bool = false
-
-signal signal_shoot(player_transform : Transform2D)
-
 @export var player_id : int = 1:
 	set (id):
 		player_id = id 
 		%InputSynchronizer.set_multiplayer_authority(id)
+
+var is_shooting : bool = false
+
+signal signal_shoot(player_transform : Transform2D)
 
 func get_input() -> void:
 	rotation += %InputSynchronizer.input_rotation * rotation_speed

@@ -17,7 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-MultiplayerManager="*res://multiplayer/multiplayer_manager.gd"
+Globals="*res://Globals/globals.tscn"
+GameManager="*res://managers/game_manager.gd"
+MultiplayerManager="*res://managers/multiplayer_manager.gd"
 
 [display]
 

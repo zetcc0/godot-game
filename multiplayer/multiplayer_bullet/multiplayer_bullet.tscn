@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3xjakcqnupe3"]
+[gd_scene load_steps=5 format=3 uid="uid://ckky5jno4bn6l"]
 
-[ext_resource type="Texture2D" uid="uid://b52ceev1ne53q" path="res://icon.svg" id="1_v7oki"]
-[ext_resource type="Script" uid="uid://cefswgaymqlae" path="res://bullet.gd" id="1_v8qja"]
+[ext_resource type="Script" uid="uid://cefswgaymqlae" path="res://multiplayer/multiplayer_bullet/multiplayer_bullet.gd" id="1_kgcmu"]
+[ext_resource type="Texture2D" uid="uid://b52ceev1ne53q" path="res://icon.svg" id="2_5du0t"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_v8qja"]
 properties/0/path = NodePath(".:position")
@@ -15,7 +15,7 @@ properties/1/replication_mode = 1
 size = Vector2(32, 32)
 
 [node name="Area2D" type="Area2D"]
-script = ExtResource("1_v8qja")
+script = ExtResource("1_kgcmu")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_v8qja")
@@ -25,4 +25,4 @@ shape = SubResource("RectangleShape2D_v8qja")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_v7oki")
+texture = ExtResource("2_5du0t")
