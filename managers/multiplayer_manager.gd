@@ -1,14 +1,12 @@
 extends Node
 
-const SERVER_PORT = 8080
-var server_ip = "127.0.0.1"
-
-
+const SERVER_PORT : int = 8080
+var server_ip : String = "127.0.0.1"
 
 func _on_player_shoot(player_transform):
 	var bullet = Globals.bullet_scene.instantiate()
 	bullet.transform = player_transform
-	_bullets_spawn_node.add_child(bullet, true)
+	Globals._bullets_spawn_node.add_child(bullet, true)
 
 func set_ip(new_ip: String):
 	print("New Ip: ", new_ip)
@@ -49,13 +47,13 @@ func _add_player_to_game(id: int):
 	
 	player_to_add.connect("signal_shoot", Callable(self, "_on_player_shoot"))
 	
-	_players_spawn_node.add_child(player_to_add, true)
+	Globals._players_spawn_node.add_child(player_to_add, true)
 
 func _del_player(id: int):
 	print("player %s left the game..." % id)
-	if not  _players_spawn_node.has_node(str(id)):
+	if not  Globals._players_spawn_node.has_node(str(id)):
 		return
-	_players_spawn_node.get_node(str(id)).queue_free()
+	Globals._players_spawn_node.get_node(str(id)).queue_free()
 
 func _remove_single_player():
 	print("Remove single player")

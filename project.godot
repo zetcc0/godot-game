@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Globals="*res://Globals/globals.tscn"
+Globals="*res://globals/globals.tscn"
 GameManager="*res://managers/game_manager.gd"
 MultiplayerManager="*res://managers/multiplayer_manager.gd"
 
